@@ -1,0 +1,13 @@
+<form actiion="/tasks" method="post">
+  <div data-turbo="false">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="task[title]"><br><br>
+    <label for="description">Description:</label>
+    <textarea id="description" name="task[description]" rows="4" cols="50"></textarea><br><br>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="task[date]">
+    <input type="submit" value="Submit">
+  </div>
+</form>
