@@ -1,6 +1,7 @@
+<%#
 <form action="/tasks" method="post">
   <div data-turbo="false">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token">
 
     <label for="title">Title:</label>
     <input type="text" id="title" name="task[title]"><br><br>
@@ -11,3 +12,14 @@
     <input type="submit" value="Submit">
   </div>
 </form>
+%>
+
+<%= form_with model: @task do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title, placeholder: "Title" %><br><br>
+  <%= form.label :description %>
+  <%= form.textarea :description, size: "50x4" %><br><br>
+  <%= form.label :date %>
+  <%= form.date_field :due_date %><br><br>
+  <%= form.submit "Submit" %>
+<% end %>
